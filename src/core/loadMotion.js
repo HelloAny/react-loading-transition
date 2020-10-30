@@ -50,7 +50,6 @@ export default class LoadMotion extends React.Component {
    * Control component switching and action effects
    * @param {number} timeout
    * @param {bool} nextState
-   * @param {node} nodeDOM
    */
   _forceShow = (timeout, nextState) => {
     const { status, come, from } = this.state;
