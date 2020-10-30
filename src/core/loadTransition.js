@@ -33,15 +33,15 @@ export default class LoadTransition extends React.Component {
   };
 
   render() {
+    //静态化上下文防止重新渲染
     const providerObj = {
-      isload: this.state.isLoad,
       appear: this.props.appear
     };
     const { LoadNode } = this.state;
     return (
       <main>
         {LoadNode && (
-          <LoadNode {...providerObj} />
+          <LoadNode isload={this.state.isLoad} />
         )}
         <LoadContextProvider value={providerObj}>
           {this.props.children}
