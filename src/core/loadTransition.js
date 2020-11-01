@@ -24,7 +24,7 @@ export default class LoadTransition extends React.Component {
         this.setState({
           isLoad: nextStatus
         });
-      }, this.props.delay);
+      }, this.props.mintime);
     } else if (nextStatus && !prevStatus) {
       this.setState({
         isLoad: nextStatus
@@ -54,7 +54,7 @@ export default class LoadTransition extends React.Component {
 LoadTransition.defaultProps = {
   LoadNode: null,
   appear: false,
-  delay: 0
+  mintime: 1000
 };
 
 LoadTransition.propTypes = {
@@ -71,5 +71,5 @@ LoadTransition.propTypes = {
   /**
    * Provides animation time control
    */
-  delay: PropTypes.number
+  mintime: PropTypes.number
 };
